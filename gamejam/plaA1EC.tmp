@@ -1,0 +1,143 @@
+[gd_scene load_steps=22 format=3 uid="uid://bcdg6heb6j5vv"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_4pv48"]
+[ext_resource type="Texture2D" uid="uid://cyb5p6x7bqx2i" path="res://Ninja_Sprites/Idle.png" id="2_5jix0"]
+[ext_resource type="Texture2D" uid="uid://c3yd875w8y0yd" path="res://Ninja_Sprites/Run.png" id="3_u1nut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86trb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6itw"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opahf"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp0ks"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbt2n"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc3uk"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acuk4"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63vn1"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u6oi"]
+atlas = ExtResource("2_5jix0")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbk6e"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc0oj"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11e5p"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0la47"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q4kc"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33wye"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_law7e"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7tmr"]
+atlas = ExtResource("3_u1nut")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbv73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6itw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opahf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp0ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbt2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc3uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acuk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63vn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u6oi")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbk6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc0oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11e5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0la47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q4kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33wye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_law7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7tmr")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4pv48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_86trb")
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jbv73")
+animation = &"Idle"
+autoplay = "Idle"
